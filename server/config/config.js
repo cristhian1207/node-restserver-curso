@@ -9,7 +9,7 @@ process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 // ==============================
-//  Entorno
+//  Base de Datos
 // ==============================
 let urlDB = '';
 if (process.env.NODE_ENV === 'dev') {
@@ -18,3 +18,17 @@ if (process.env.NODE_ENV === 'dev') {
     urlDB = process.env.MONGO_URI;
 }
 process.env.URL_DB = urlDB;
+
+// ==============================
+//  Fecha de vencimiento
+// ==============================
+//60 segundos
+//60 minutos
+//24 horas
+//30 días
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+// ==============================
+//  Seed
+// ==============================
+process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
